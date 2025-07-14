@@ -1,47 +1,41 @@
 import { FaHome } from "react-icons/fa";
-import { FcAbout } from "react-icons/fc";
-import { AiFillProduct } from "react-icons/ai";
-import { VscFeedback } from "react-icons/vsc";
-import { MdContactMail } from "react-icons/md";
+import { FaBuildingColumns } from "react-icons/fa6";
+import { PiPhoneCall } from "react-icons/pi";
+import { MdMiscellaneousServices } from "react-icons/md";
+import { IoIosHelpCircle } from "react-icons/io";
+
 
 export default function Navbar() {
     const MENUDATA = [
-        { name: 'Home', icons: <FaHome size={18} />, link: '/' },
-        { name: 'Product', icons: <AiFillProduct size={18} />, link: '/product' },
-        { name: 'About', icons: <FcAbout size={18} />, link: '/about' },
-        { name: 'Contact Us', icons: <MdContactMail size={18} />, link: '/contact' },
-        { name: 'FeedBack', icons: <VscFeedback size={18} />, link: '/freedback' },
-    ];
+        { name: "Home", icon: <FaHome size={18} />, link: "/" },
+        { name: "About", icon: <FaBuildingColumns size={17} />, link: "/about" },
+        { name: "Contact Us", icon: <PiPhoneCall size={19} />, link: "/contact_us" },
+        { name: "Services", icon: <MdMiscellaneousServices size={18} />, link: "/services" },
+        { name: "Help", icon: <IoIosHelpCircle size={18} />, link: "/help" },
+    ]
 
     return (
-        <nav className="flex justify-between items-center bg-gradient-to-r from-gray-700 to-gray-400 py-4 px-8 shadow-md">
+        <nav className="flex items-center justify-between bg-gradient-to-r from-slate-900 to-gray-700 py-4 px-8">
+            <a href="/"><h1 className="text-white text-2xl font-bold hover:scale-125 duration-200"><span className="text-red-500 text-3xl font-extrabold">J</span>atin</h1></a>
 
-            {/* Logo */}
-            <a href=""><h1 className="text-2xl font-bold text-white hover:text-red-500 duration-300">MyBrand</h1></a>
-            {/* Navigation Links */}
-            <ul className="flex gap-6">
-                {MENUDATA.map(({ name, icons, link }, k) => (
+            {/*navlinks*/}
+            <ul className="flex gap-10 items-center">
+                {MENUDATA.map(({ name, icon, link }, k) => (
                     <li key={k}>
-                        <a
-                            href={link}
-                            className="flex items-center gap-2 text-white font-medium hover:text-black transition-all duration-300"
-                        >
-                            {icons}
+                        <a href={link} className="flex gap-2 items-center text-white hover:text-gray-400 transition duration-200" >{icon}
                             <span>{name}</span>
                         </a>
                     </li>
                 ))}
             </ul>
 
-            {/* Buttons */}
-            <div className="flex gap-4">
-                <button className="bg-white text-amber-500 px-4 py-2 rounded-lg font-semibold hover:bg-amber-100 transition duration-300 shadow">
-                    Log In
-                </button>
-                <button className="bg-black text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 shadow">
-                    Sign Up
-                </button>
+            {/*buttons signup and signin*/}
+            <div className="flex gap-3 items-center">
+                <button className="px-4 py-2 bg-white rounded-lg hover:bg-gray-400 transition duration-200 hover:translate-y-[-3px] active:scale-[0.9]">Sign In</button>
+                <button className="px-4 py-2 bg-black rounded-lg text-white hover:bg-gray-800 transition duration-200 hover:translate-y-[-3px] active:scale-[0.9]">Sign Up</button>
             </div>
+
         </nav>
-    );
+    )
 }
+
