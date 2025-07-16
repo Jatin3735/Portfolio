@@ -45,7 +45,7 @@ export default function Navbar() {
 
             <div onClick={() => Setopen(!open)} className="text-3xl text-white lg:hidden">
                 {
-                    open ? <FaBars className="hover:text-black" /> : <RxCross2 className="hover:text-black" />
+                    open ? <FaBars className="active:text-gray-400" /> : <RxCross2 className="active:text-gray-400" />
                 }
                 {
                     !open &&
@@ -61,7 +61,7 @@ export default function Navbar() {
                         </ul>
 
                         {/*buttons signup and signin*/}
-                        <div className="flex gap-3 items-center flex-col mb-3">
+                        <div className="flex gap-3 items-center flex-col pb-5">
                             <button className="px-4 py-2 bg-white rounded-lg text-black hover:bg-gray-400 transition duration-200 hover:translate-y-[-3px] active:scale-[0.9] w-[90%]">Sign In</button>
                             <button className="px-4 py-2 bg-black rounded-lg text-white hover:bg-gray-800 transition duration-200 hover:translate-y-[-3px] active:scale-[0.9] w-[90%]">Sign Up</button>
                         </div>
