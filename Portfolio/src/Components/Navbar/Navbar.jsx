@@ -5,10 +5,13 @@ import { MdMiscellaneousServices } from "react-icons/md";
 import { IoIosHelpCircle } from "react-icons/io";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import {Link} from 'react-router-dom'
+import { MdOutlineFeedback } from "react-icons/md";
+import { Link } from 'react-router-dom'
+import ProfileDropDown from "./ProfileDropDown";
 
 export default function Navbar() {
     const [open, Setopen] = useState(true);
+    const [log, SetLog] = useState( );
 
     const MENUDATA = [
         { name: "Home", icon: <FaHome size={18} />, link: "/" },
@@ -16,11 +19,12 @@ export default function Navbar() {
         { name: "Contact Us", icon: <PiPhoneCall size={19} />, link: "/contact_us" },
         { name: "Services", icon: <MdMiscellaneousServices size={18} />, link: "/services" },
         { name: "Help", icon: <IoIosHelpCircle size={18} />, link: "/help" },
+        {name: "Feedback", icon:<MdOutlineFeedback size={18} /> , link:"/feedback"}
     ];
 
     const Auth = [
-        { name: "Sign In", link: "/sign_in", css: "bg-white hover:bg-gray-400 text-black" },
-        { name: "Sign Up", link: "/sign_up", css: "bg-black text-white hover:bg-gray-800" },
+        { name: "Sign In", link: "/sign_in", css: "text-black" },
+        { name: "Sign Up", link: "/sign_up", css: "text-white" },
     ];
 
     return (
@@ -45,16 +49,20 @@ export default function Navbar() {
             </ul>
 
             {/* Desktop Auth Buttons */}
-            <div className="lg:flex gap-3 items-center hidden">
-                {Auth.map(({ name, link, css }, i) => (
-                    <Link to={link} key={i}>
-                        <button
-                            className={`px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] ${css}`}>
-                            {name}
-                        </button>
-                    </Link>
-                ))}
-            </div>
+            {
+                log ? <ProfileDropDown /> :
+                    <div className="lg:flex gap-3 items-center hidden">
+                        {Auth.map(({ name, link, css }, i) => (
+                            <Link to={link} key={i}>
+                                <button
+                                    className={`px-4 py-2 rounded-lg outline outline-red-500/40 transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] hover:shadow-xl hover:outline hover:outline-red-500 hover:shadow-red-500/30 ${css}`}>
+                                    {name}
+                                </button>
+                            </Link>
+                        ))}
+                    </div>
+            }
+
 
             {/* Mobile Icon */}
             <div onClick={() => Setopen(!open)} className="text-3xl text-white lg:hidden z-50 cursor-pointer">
@@ -84,9 +92,9 @@ export default function Navbar() {
                 <div className="flex gap-3 flex-col pb-5 w-full items-center">
                     {Auth.map(({ name, link, css }, i) => (
                         <Link to={link} key={i} className="w-[90%]"
-                        onClick={() => Setopen(true)}>
+                            onClick={() => Setopen(true)}>
                             <button
-                                className={`w-full px-4 py-2 rounded-xl text-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] ${css}`}>
+                                className={`w-full px-4 py-2 rounded-xl text-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] outline outline-red-500/40 hover:shadow-xl hover:outline hover:outline-red-500 hover:shadow-red-500/30 ${css}`}>
                                 {name}
                             </button>
                         </Link>

@@ -1,6 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaReact, FaGithub } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { TbBrandJavascript } from "react-icons/tb";
+import { MdScreenshotMonitor } from "react-icons/md";
+import { SiHtml5, SiVite } from "react-icons/si";
+import { IoAccessibility } from "react-icons/io5";
+
 export default function About() {
+  const values = [
+    {
+      title: 'Simplicity',
+      desc: 'We believe simplicity is the key to clarity. Our designs are minimal and intentional.',
+    },
+    {
+      title: 'Performance',
+      desc: 'Speed and optimization are central to every line of code we write.',
+    },
+    {
+      title: 'Responsiveness',
+      desc: 'Every page and component adapts perfectly across all devices and screen sizes.',
+    },
+  ];
+
+  const skills = [
+    { name: "React.js", icon: <FaReact /> },
+    { name: "Tailwind CSS", icon: <RiTailwindCssFill /> },
+    { name: "JavaScript (ES6+)", icon: <TbBrandJavascript /> },
+    { name: "Responsive Web Design", icon: <MdScreenshotMonitor /> },
+    { name: "HTML5 / CSS3", icon: <SiHtml5 /> },
+    { name: "Vite / Webpack", icon: <SiVite /> },
+    { name: "Git & GitHub", icon: <FaGithub /> },
+    { name: "Accessibility (A11y)", icon: <IoAccessibility /> },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-slate-900 to-gray-700 text-white px-6 py-20 space-y-20">
       {/* Intro Section */}
@@ -30,28 +63,17 @@ export default function About() {
       </section>
 
       {/* Core Values Section */}
-      <section className="max-w-5xl mx-auto"
-      style={{
+      <section
+        className="max-w-5xl mx-auto"
+        style={{
           animation: 'fadeInUp 1s ease-out forwards',
           opacity: 0,
           transform: 'translateY(20px)',
-        }}>
+        }}
+      >
         <h2 className="text-3xl font-semibold mb-8 text-center text-red-400">Core Values</h2>
         <div className="grid md:grid-cols-3 gap-8 text-center">
-          {[
-            {
-              title: 'Simplicity',
-              desc: 'We believe simplicity is the key to clarity. Our designs are minimal and intentional.',
-            },
-            {
-              title: 'Performance',
-              desc: 'Speed and optimization are central to every line of code we write.',
-            },
-            {
-              title: 'Responsiveness',
-              desc: 'Every page and component adapts perfectly across all devices and screen sizes.',
-            },
-          ].map((value, index) => (
+          {values.map((value, index) => (
             <div
               key={index}
               className="bg-slate-800 p-6 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
@@ -64,35 +86,40 @@ export default function About() {
       </section>
 
       {/* Technologies Section */}
-      <section className="max-w-5xl mx-auto text-center"
-      style={{
+      <section
+        className="max-w-5xl mx-auto text-center"
+        style={{
           animation: 'fadeInUp 1s ease-out forwards',
           opacity: 0,
           transform: 'translateY(20px)',
-        }}>
+        }}
+      >
         <h2 className="text-3xl font-semibold text-red-400 mb-6">Technologies We Use</h2>
         <p className="text-gray-300 mb-8">
           We use modern, cutting-edge tools to build future-proof websites:
         </p>
-        <ul className="grid md:grid-cols-4 gap-4 text-sm text-gray-400">
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">React.js</li>
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">Tailwind CSS</li>
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">JavaScript (ES6+)</li>
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">Responsive Web Design</li>
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">HTML5 / CSS3</li>
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">Vite / Webpack</li>
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">Git & GitHub</li>
-          <li className="bg-gray-800 py-2 px-4 rounded-xl hover:bg-gray-900 duration-300 hover:text-white hover:scale-105">Accessibility (A11y)</li>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm text-gray-400">
+          {skills.map(({ name, icon }, index) => (
+            <li
+              key={index}
+              className="bg-gray-800 py-3 px-4 rounded-xl hover:bg-gray-900 hover:text-white hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              <span className="text-xl">{icon}</span>
+              <span>{name}</span>
+            </li>
+          ))}
         </ul>
       </section>
 
       {/* Final CTA Section */}
-      <section className="max-w-3xl mx-auto text-center mt-16"
-      style={{
+      <section
+        className="max-w-3xl mx-auto text-center mt-16"
+        style={{
           animation: 'fadeInUp 1s ease-out forwards',
           opacity: 0,
           transform: 'translateY(20px)',
-        }}>
+        }}
+      >
         <h2 className="text-3xl font-bold text-white mb-4">Let’s Build Something Great</h2>
         <p className="text-gray-400 mb-6">
           Whether you're a business owner, a student, or just someone with an idea — let’s turn it into reality.

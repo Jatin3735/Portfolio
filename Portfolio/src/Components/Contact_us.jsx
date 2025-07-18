@@ -78,10 +78,20 @@ export default function Contact_us() {
       {/* Google Maps or Placeholder */}
       <section className="max-w-5xl mx-auto">
         <h3 className="text-2xl font-semibold text-center text-red-400 mb-4">Find Us Here</h3>
-        <div className="w-full h-64 bg-gray-700 rounded-xl flex items-center justify-center text-gray-400">
-          {/* Replace this div with Google Maps iframe if desired */}
-          Google Map Embed Placeholder
-        </div>
+        <div className="w-full h-64 rounded-xl overflow-hidden shadow-md">
+      <iframe
+      title="Jatin Location"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d884.7959322458046!2d76.29520871726352!3d29.89815779039126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1752819248249!5m2!1sen!2sin"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+</div>
+
       </section>
 
       {/* FAQs */}
