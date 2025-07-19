@@ -11,7 +11,7 @@ export default function ProfileDropDown() {
 
     const ProfileData = [
         { name: 'Your Profile', link: '/', icons: <FaCircleUser /> },
-        { name: 'Setting', link: './p', icons: <IoSettingsSharp /> },
+        { name: 'Setting', link: '/', icons: <IoSettingsSharp /> },
         { name: 'Sign Out', icons: <PiSignOutBold /> ,link:{}},
     ]
 
@@ -21,7 +21,7 @@ export default function ProfileDropDown() {
                 <div>
                     <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800">
 
-                        <img className="size-8 rounded-full" src="https://cdn.pixabay.com/photo/2024/05/22/21/51/dog-8781844_1280.jpg" />
+                        <img className="size-8 rounded-full" src="https://assets.gqindia.com/photos/6851031d0eae6262b75b95c4/16:9/w_2560%2Cc_limit/Money-Heist-actor-Alvaro-Morte-Berlin-2-The-Professor-cameo.jpg" />
                     </MenuButton>
                 </div>
                 <MenuItems
