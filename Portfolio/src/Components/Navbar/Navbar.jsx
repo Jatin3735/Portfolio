@@ -8,6 +8,7 @@ import { RxCross2 } from "react-icons/rx";
 import { MdOutlineFeedback } from "react-icons/md";
 import { Link } from 'react-router-dom'
 import ProfileDropDown from "./ProfileDropDown";
+import { Button } from "@headlessui/react";
 
 export default function Navbar() {
     const [open, Setopen] = useState(true);
@@ -89,6 +90,13 @@ export default function Navbar() {
                 </ul>
 
                 {/* Mobile Auth Buttons */}
+                
+                {log ? 
+                <div className="text-center ">
+                    <a href="/" className="text-black hover:text-gray-400 transition-all duration-200 w-full">
+                    <button className="w-[90%] px-4 py-2 rounded-xl text-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] bg-white hover:bg-transparent outline-red-500/40 hover:shadow-xl hover:outline hover:outline-red-500 hover:shadow-red-500/30">Log Out</button>
+                </a> 
+                </div>   : 
                 <div className="flex gap-3 flex-col pb-5 w-full items-center">
                     {Auth.map(({ name, link, css }, i) => (
                         <Link to={link} key={i} className="w-[90%]"
@@ -98,8 +106,10 @@ export default function Navbar() {
                                 {name}
                             </button>
                         </Link>
-                    ))}
+                    ))} m
                 </div>
+            }
+
             </div>
         </nav>
     );

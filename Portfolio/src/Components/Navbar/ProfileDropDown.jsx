@@ -5,8 +5,6 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { PiSignOutBold } from "react-icons/pi";
 
 
-
-
 export default function ProfileDropDown() {
 
     const ProfileData = [
