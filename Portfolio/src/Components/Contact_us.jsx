@@ -69,9 +69,9 @@ export default function Contact_us() {
       <section className="max-w-4xl mx-auto text-center md:text-left">
         <h3 className="text-2xl font-semibold mb-4 text-red-400">Our Contact Details</h3>
         <div className="space-y-4 text-gray-300">
-          <p><strong>Email:</strong> contact@jatinsite.com</p>
+          <p><strong>Email:</strong> jatinjangra514@gmail.com</p>
           <p><strong>Phone:</strong> +91 9876543210</p>
-          <p><strong>Address:</strong> New Delhi, India</p>
+          <p><strong>Address:</strong> Prabhawat, Kaithal, Haryana India</p>
         </div>
       </section>
 
