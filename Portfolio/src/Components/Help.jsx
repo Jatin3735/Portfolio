@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 export default function Help() {
   const helpTopics = [
@@ -106,7 +105,7 @@ export default function Help() {
         <h3 className="text-3xl font-semibold text-center text-yellow-300 mb-6">Frequently Asked Questions</h3>
         <div className="space-y-6">
           {faqs.map(({ q, a }, idx) => (
-            <div key={idx} className="bg-slate-800 p-6 rounded-xl shadow-md">
+            <div key={idx} className="bg-slate-800 p-6 rounded-xl shadow-md hover:scale-105 duration-300">
               <h4 className="text-xl font-semibold text-white mb-2">❓ {q}</h4>
               <p className="text-gray-300">{a}</p>
             </div>
@@ -115,7 +114,7 @@ export default function Help() {
       </section>
 
       {/* Still Need Help */}
-      <section className="bg-slate-800 rounded-xl max-w-4xl mx-auto py-12 px-6 text-center shadow-lg"
+      <section className="bg-slate-800 rounded-xl max-w-4xl mx-auto py-12 px-6 text-center shadow-lg hover:border-yellow-400 hover:shadow-lg hover:shadow-yellow-400/30 duration-400 border border-slate-700"
         style={{
           animation: 'fadeInUp 1s ease-out forwards',
           opacity: 0,
