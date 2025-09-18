@@ -20,7 +20,7 @@ export default function Navbar() {
         { name: "Contact Us", icon: <PiPhoneCall size={19} />, link: "/contact_us" },
         { name: "Services", icon: <MdMiscellaneousServices size={18} />, link: "/services" },
         { name: "Help", icon: <IoIosHelpCircle size={18} />, link: "/help" },
-        {name: "Feedback", icon:<MdOutlineFeedback size={18} /> , link:"/feedback"}
+        { name: "Feedback", icon: <MdOutlineFeedback size={18} />, link: "/feedback" }
     ];
 
     const Auth = [
@@ -90,25 +90,25 @@ export default function Navbar() {
                 </ul>
 
                 {/* Mobile Auth Buttons */}
-                
-                {log ? 
-                <div className="text-center ">
-                    <a href="/" className="text-black hover:text-gray-400 transition-all duration-200 w-full">
-                    <button className="w-[90%] px-4 py-2 rounded-xl text-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] bg-white hover:bg-transparent outline-red-500/40 hover:shadow-xl hover:outline hover:outline-red-500 hover:shadow-red-500/30">Log Out</button>
-                </a> 
-                </div>   : 
-                <div className="flex gap-3 flex-col pb-5 w-full items-center">
-                    {Auth.map(({ name, link, css }, i) => (
-                        <Link to={link} key={i} className="w-[90%]"
-                            onClick={() => Setopen(true)}>
-                            <button
-                                className={`w-full px-4 py-2 rounded-xl text-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] hover:bg-transparent outline-red-500/40 hover:shadow-xl hover:outline hover:outline-red-500 hover:shadow-red-500/30 ${css}`}>
-                                {name}
-                            </button>
-                        </Link>
-                    ))} m
-                </div>
-            }
+
+                {log ?
+                    <div className="text-center ">
+                        <a href="/" className="text-black hover:text-gray-400 transition-all duration-200 w-full">
+                            <button className="w-[90%] px-4 py-2 rounded-xl text-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] bg-white hover:bg-transparent outline-red-500/40 hover:shadow-xl hover:outline hover:outline-red-500 hover:shadow-red-500/30">Log Out</button>
+                        </a>
+                    </div> :
+                    <div className="flex gap-3 flex-col pb-5 w-full items-center">
+                        {Auth.map(({ name, link, css }, i) => (
+                            <Link to={link} key={i} className="w-[90%]"
+                                onClick={() => Setopen(true)}>
+                                <button
+                                    className={`w-full px-4 py-2 rounded-xl text-lg transition-all duration-300 ease-in-out hover:translate-y-[-3px] active:scale-[0.9] hover:bg-transparent outline-red-500/40 hover:shadow-xl hover:outline hover:outline-red-500 hover:shadow-red-500/30 ${css}`}>
+                                    {name}
+                                </button>
+                            </Link>
+                        ))} 
+                    </div>
+                }
 
             </div>
         </nav>
